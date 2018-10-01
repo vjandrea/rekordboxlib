@@ -4,15 +4,20 @@ Developed in Python 3.7, tested on macOS and Windows.
 Provides some methods to parse Rekordbox XML collections.
 
 ## Usage
+### Dependencies
+This library relies on untangle to access the XML data
+
+    pip install untangle
+
 ### Import and initalization
 
     from rekorboxlib import Rekordbox
     
-    coll = Rekordbox('path_to_my_exported_collection.xml')
+    collection = Rekordbox('path_to_my_exported_collection.xml')
 
 ### Finding duplicates
 
-    coll.list_duplicate_songs()
+    collection.list_duplicate_songs()
 
 #### Output:
 
@@ -24,10 +29,7 @@ Provides some methods to parse Rekordbox XML collections.
 
 ### List songs in alphabetical order
 
-    from rekorboxlib import Rekordbox
-    
-    coll = Rekordbox('path_to_my_exported_collection.xml')
-    coll.list_sorted_songs()
+    collection.list_sorted_songs()
 
 #### Output:
      - HORN
@@ -42,4 +44,5 @@ in Rekordbox itself. Probably I'll add more methods in the future, this is a qui
 
 ### TODO
 - GUI (Qt5)
+- add a duplicate checker for locations
 - add a spellchecker for Artists and Titles
